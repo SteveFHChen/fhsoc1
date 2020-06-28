@@ -15,7 +15,12 @@ public class SocketClientTCPm {
 			if(args.length>=1){
 				serverIP=args[0];
 			}
-			Socket socket=new Socket(serverIP,8082);//立即连接服务端，如果服务端连接不上就直接报错，退出程序
+			
+			int port=8082;
+			if(args.length>=2){
+				port=Integer.parseInt(args[1]);
+			}
+			Socket socket=new Socket(serverIP,port);//立即连接服务端，如果服务端连接不上就直接报错，退出程序
 			System.out.println("我"+socket.getLocalPort()+"已成功连接上服务器"+socket.getPort());
 			
 			ClientSend cs1 = new ClientSend(socket);//注意这两行的顺序，ClientSend()必须放在ClientRecive()之前，这是因为管收阻塞导致的。

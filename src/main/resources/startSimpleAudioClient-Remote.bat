@@ -1,0 +1,1 @@
+java -cp D:\fhws11\fhsocket1\target\fhsocket1-0.0.1-SNAPSHOT.jar com.simpleaudiosocket.ClientAudio 47.106.111.210 8084
